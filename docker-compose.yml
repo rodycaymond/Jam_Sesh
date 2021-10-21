@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  # frontend:
+  #   build: front/
+  #   depends_on:
+  #     - 'database'
+  #   ports: 
+  #     - '3000:3000'
+  # backend:
+  #   build: back/
+  #   depends_on:
+  #     - 'database'
+  #   ports: 
+  #     - '8080:8080'
+  database:
+    image: postgres
+    environment:
+      POSTGRES_DB: jam_sesh
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: secretpassword
+    ports:
+      - '5432:5432'
+    restart: always
+volumes:
+  database:
