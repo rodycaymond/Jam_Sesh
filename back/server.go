@@ -2,7 +2,6 @@ package main
 
 import (
     "net/http"
-    "fmt"
     "github.com/gin-gonic/gin"
 )
 
@@ -24,7 +23,7 @@ func getAlbums(c *gin.Context) {
 
 func main() {
     router := gin.Default()
-    router.GET("/albums", getAlbums)
+    router.GET("/", getAlbums)
 
     router.Run("localhost:8080")
 }
